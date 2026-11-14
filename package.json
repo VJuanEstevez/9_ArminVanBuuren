@@ -1,0 +1,30 @@
+{
+  "name": "9_ArminVanBuuren",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "oxlint src/",
+    "format": "oxfmt src/",
+    "deploy": "pnpm run build && gh pages -d dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.18.0",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "pnpm@12.18.0",
+  "type": "module",
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "vite": "^8.3.8"
+  }
+}
