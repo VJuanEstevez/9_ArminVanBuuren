@@ -1,0 +1,150 @@
+/* ==========================================================================
+   Navegación — skip link, cabecera y marca
+   ========================================================================== */
+
+.skip-link {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 200;
+  padding: 0.6rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink);
+  background: var(--cyan);
+  border-radius: 0.4rem;
+  transform: translateY(-150%);
+  transition: transform 0.2s ease;
+
+  &:focus {
+    transform: translateY(0);
+  }
+}
+
+/* Cabecera ------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--line);
+  background: rgba(5, 3, 15, 0.58);
+  backdrop-filter: blur(1.25rem) saturate(160%);
+  -webkit-backdrop-filter: blur(1.25rem) saturate(160%);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding: 0.7rem var(--gutter);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text);
+  text-decoration: none;
+
+  &:hover .brand__mark {
+    color: var(--magenta);
+  }
+}
+
+.brand__mark {
+  flex: none;
+  width: 1.85rem;
+  height: 1.85rem;
+  color: var(--cyan);
+}
+
+.brand__name {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Botón de menú móvil -------------------------------------------------------- */
+.menu-toggle {
+  display: none;
+  place-items: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  padding: 0;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--line-strong);
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    border-color: var(--cyan);
+    background: rgba(103, 232, 249, 0.1);
+  }
+}
+
+.menu-toggle__bars {
+  display: grid;
+  gap: 0.28rem;
+
+  span {
+    display: block;
+    width: 1.2rem;
+    height: 2px;
+    background: currentColor;
+    border-radius: 999px;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+  }
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__bars {
+  span:nth-child(1) {
+    transform: translateY(0.42rem) rotate(45deg);
+  }
+
+  span:nth-child(2) {
+    opacity: 0;
+  }
+
+  span:nth-child(3) {
+    transform: translateY(-0.42rem) rotate(-45deg);
+  }
+}
+
+.site-nav {
+  max-width: 100%;
+
+  ul {
+    display: flex;
+    gap: 0.35rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  a {
+    display: block;
+    padding: 0.45rem 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    white-space: nowrap;
+    transition: color 0.2s ease, border-color 0.2s ease;
+
+    &:hover,
+    &[aria-current] {
+      color: var(--text);
+      border-bottom-color: var(--cyan);
+    }
+  }
+}

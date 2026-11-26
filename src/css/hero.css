@@ -1,0 +1,142 @@
+/* ==========================================================================
+   Hero — portada, título, acciones y ecualizador decorativo
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100svh;
+  padding: clamp(6rem, 13vh, 9rem) var(--gutter) clamp(9rem, 18vh, 13rem);
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      linear-gradient(90deg, var(--ink) 6%, rgba(5, 3, 15, 0.9) 42%, rgba(5, 3, 15, 0.35) 78%),
+      linear-gradient(0deg, var(--ink) 2%, transparent 52%),
+      radial-gradient(55% 60% at 18% 62%, rgba(139, 92, 246, 0.32), transparent 70%);
+  }
+}
+
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: var(--hero-image);
+  background-position: 68% 38%;
+  background-size: cover;
+  filter: saturate(1.15) contrast(1.05);
+  opacity: 0.55;
+  -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent 96%);
+  mask-image: linear-gradient(to bottom, #000 45%, transparent 96%);
+}
+
+.hero__inner {
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+}
+
+.hero__title {
+  margin-top: clamp(1.5rem, 4vh, 2.5rem);
+  font-weight: 400;
+  line-height: 0.82;
+  letter-spacing: -0.045em;
+}
+
+.hero__title-main {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 13.5vw, 11rem);
+  color: var(--text);
+}
+
+.hero__title-accent {
+  display: block;
+  margin-top: 0.2em;
+  margin-left: 0.12em;
+  padding-bottom: 0.12em;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(2.6rem, 7.6vw, 6.4rem);
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  text-transform: none;
+}
+
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .hero__title-accent {
+    color: transparent;
+    background-image: var(--gradient-neon);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.hero__lede {
+  max-width: 38rem;
+  margin-top: clamp(1.5rem, 3.5vh, 2.25rem);
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  color: var(--muted);
+
+  em {
+    color: var(--text);
+    font-style: italic;
+  }
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: clamp(1.75rem, 4vh, 2.5rem);
+}
+
+.hero__wave {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.22rem;
+  height: clamp(4.5rem, 13vh, 8.5rem);
+  padding-inline: var(--gutter);
+  opacity: 0.6;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to top, #000 35%, transparent);
+  mask-image: linear-gradient(to top, #000 35%, transparent);
+
+  span {
+    flex: 1 1 0;
+    height: var(--bar-height, 30%);
+    border-radius: 999px 999px 0 0;
+    background-image: linear-gradient(
+      to top,
+      rgba(103, 232, 249, 0.08),
+      var(--violet) 55%,
+      var(--magenta)
+    );
+    transform-origin: bottom;
+    animation: bar-pulse 2.6s ease-in-out infinite alternate;
+    animation-delay: calc(var(--bar-index) * -0.09s);
+  }
+}
+
+@keyframes bar-pulse {
+  from {
+    transform: scaleY(0.32);
+    opacity: 0.55;
+  }
+
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}

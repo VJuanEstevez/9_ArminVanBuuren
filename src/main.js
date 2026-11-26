@@ -1,12 +1,14 @@
-import "./styles/main.css";
-import { initEmbeds } from "./js/embeds.js";
-import { initReactions } from "./js/reactions.js";
-import { initScrollTop } from "./js/scroll-top.js";
-import { initScrollSpy } from "./js/scroll-spy.js";
-import { initWaveform } from "./js/waveform.js";
+import "./css/main.css";
+import { initEmbeds } from "./modules/embeds.js";
+import { initMobileMenu } from "./modules/mobile-menu.js";
+import { initScrollTop } from "./modules/scroll-top.js";
+import { initScrollSpy } from "./modules/scroll-spy.js";
+import { initSurprise } from "./modules/surprise.js";
+import { initWaveform } from "./modules/waveform.js";
 
 initWaveform(document.querySelector("[data-waveform]"));
 initEmbeds();
-initReactions();
+initMobileMenu();
 initScrollTop();
 initScrollSpy();
+initSurprise();

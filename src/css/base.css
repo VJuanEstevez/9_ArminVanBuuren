@@ -1,0 +1,109 @@
+/* ==========================================================================
+   Base — variables, reset suave y tipografía
+   ========================================================================== */
+
+:root {
+  /* Color */
+  --ink: #05030f;
+  --ink-soft: #0a0718;
+  --text: #f4f1ff;
+  --muted: #b6adcf;
+  --cyan: #67e8f9;
+  --violet: #8b5cf6;
+  --magenta: #f472b6;
+  --star: #ffcf7a;
+
+  --line: rgba(255, 255, 255, 0.12);
+  --line-strong: rgba(255, 255, 255, 0.24);
+
+  --gradient-neon: linear-gradient(100deg, var(--cyan), var(--violet) 48%, var(--magenta));
+
+  /* Tipografía */
+  --font-display: "Archivo Black", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-body: "Space Grotesk", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  /* Medidas */
+  --max: 74rem;
+  --gutter: clamp(1.25rem, 4vw, 4rem);
+  --radius: 1.5rem;
+  --shadow: 0 2rem 4rem -1.75rem rgba(0, 0, 0, 0.9);
+
+  --hero-image: image-set(
+    url("https://i.ytimg.com/vi/YtTls69zasM/mqdefault.jpg") 1x,
+    url("https://i.ytimg.com/vi/YtTls69zasM/maxresdefault.jpg") 2x
+  );
+}
+
+/* Reset suave ----------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--text);
+  background-color: var(--ink);
+  background-image:
+    radial-gradient(70rem 50rem at 88% -8%, rgba(139, 92, 246, 0.32), transparent 62%),
+    radial-gradient(48rem 40rem at -10% 32%, rgba(103, 232, 249, 0.1), transparent 60%),
+    radial-gradient(50rem 40rem at 105% 88%, rgba(244, 114, 182, 0.12), transparent 60%);
+  background-attachment: fixed;
+
+  /* Grano cinematográfico */
+  &::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+img,
+svg,
+iframe {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p,
+figure,
+blockquote {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+}
+
+::selection {
+  color: var(--ink);
+  background: var(--cyan);
+}
+
+:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 0.2rem;
+  border-radius: 0.25rem;
+}

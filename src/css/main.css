@@ -1,0 +1,17 @@
+/* ==========================================================================
+   Armin, Simply the best — punto de entrada de estilos
+   Paleta neón nocturna · glassmorphism · CSS nativo
+   El orden de importación define la cascada:
+   base → utilidades → componentes → estados → responsive
+   ========================================================================== */
+
+@import "./base.css";
+@import "./utilities.css";
+@import "./header.css";
+@import "./hero.css";
+@import "./layout.css";
+@import "./cards.css";
+@import "./embed.css";
+@import "./tracks.css";
+@import "./states.css";
+@import "./responsive.css";

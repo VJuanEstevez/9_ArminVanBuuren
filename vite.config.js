@@ -2,9 +2,13 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   root: 'src',
-  base: '/9_ArminVanBuuren/',
+  base: './',
+  build: {
+    outDir: "../dist",
+    emptyOutDir: true,
+  },
   server: {
-    port: 5175,
-    strictPort: true
+    port: 5173,
+    strictPort: false
   }
 })

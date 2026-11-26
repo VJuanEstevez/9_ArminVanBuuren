@@ -1,0 +1,192 @@
+/* ==========================================================================
+   Responsive — puntos de ruptura de componentes
+   ========================================================================== */
+
+@media (min-width: 60.01rem) {
+  .bio {
+    position: sticky;
+    top: 5.5rem;
+  }
+}
+
+@media (max-width: 60rem) {
+  .career {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sessions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .session--featured {
+    grid-template-columns: minmax(0, 1fr);
+
+    .embed {
+      min-height: auto;
+      aspect-ratio: 16 / 9;
+      border-radius: 0;
+    }
+  }
+
+  .track {
+    grid-template-columns: 1.5rem minmax(0, 1fr);
+  }
+
+  .track__media {
+    grid-column: 2;
+    max-width: 26rem;
+  }
+
+  .links {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 44rem) {
+  :root {
+    /* En móvil se sirve siempre la miniatura ligera (16:9). */
+    --hero-image: url("https://i.ytimg.com/vi/YtTls69zasM/mqdefault.jpg");
+  }
+
+  html {
+    /* Una sola fila de cabecera: dejar espacio para los anclajes. */
+    scroll-padding-top: 4.75rem;
+  }
+
+  body {
+    /* Evitar repintados costosos en pantallas pequeñas. */
+    background-attachment: scroll;
+  }
+
+  .glass,
+  .site-header,
+  .to-top,
+  .embed__play,
+  .button--ghost {
+    backdrop-filter: blur(0.5rem);
+    -webkit-backdrop-filter: blur(0.5rem);
+  }
+
+  /* Sin JS la navegación sigue siendo desplazable; con JS pasa a ser un panel. */
+  html:not([data-menu-ready]) .site-header__inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.4rem;
+    padding-block: 0.55rem;
+  }
+
+  html:not([data-menu-ready]) .site-nav {
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    ul {
+      gap: 0.15rem;
+      width: max-content;
+    }
+
+    a {
+      padding-inline: 0.45rem;
+    }
+  }
+
+  html[data-menu-ready] .site-header__inner {
+    padding-block: 0.55rem;
+  }
+
+  html[data-menu-ready] .menu-toggle {
+    display: inline-grid;
+  }
+
+  html[data-menu-ready] .site-nav {
+    position: absolute;
+    top: 100%;
+    inset-inline: var(--gutter);
+    z-index: 99;
+    max-width: none;
+    padding: 0.5rem;
+    background: rgba(5, 3, 15, 0.96);
+    border: 1px solid var(--line);
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
+  }
+
+  html[data-menu-ready] .site-nav ul {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  html[data-menu-ready] .site-nav a {
+    padding: 0.7rem 0.8rem;
+    border-radius: 0.5rem;
+
+    &:hover {
+      background: rgba(103, 232, 249, 0.1);
+    }
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: clamp(3.5rem, 10vh, 5rem);
+    padding-bottom: 9rem;
+
+    &::before {
+      background:
+        linear-gradient(90deg, var(--ink) 2%, rgba(5, 3, 15, 0.78) 60%, rgba(5, 3, 15, 0.4)),
+        linear-gradient(0deg, var(--ink) 2%, transparent 60%),
+        radial-gradient(80% 50% at 10% 40%, rgba(139, 92, 246, 0.28), transparent 70%);
+    }
+  }
+
+  .hero__media {
+    opacity: 0.4;
+    background-position: 62% 30%;
+  }
+
+  .hero__title-main {
+    font-size: clamp(3.6rem, 19vw, 6rem);
+  }
+
+  .hero__title-accent {
+    font-size: clamp(2.3rem, 10.5vw, 3.6rem);
+    margin-left: 0;
+  }
+
+  .track {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.9rem;
+  }
+
+  .track__rank {
+    padding-top: 0;
+  }
+
+  .track__media {
+    grid-column: auto;
+    max-width: none;
+  }
+
+  .timeline__item {
+    grid-template-columns: 3.5rem minmax(0, 1fr);
+    gap: 0.9rem;
+  }
+}
+
+@media (max-width: 26rem) {
+  .brand__name {
+    display: none;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+  }
+}

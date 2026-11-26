@@ -1,0 +1,55 @@
+/* ==========================================================================
+   Estados — revelado al hacer scroll y movimiento reducido
+   ========================================================================== */
+
+/* Revelado al hacer scroll (progressive enhancement) -------------------------- */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    [data-reveal] {
+      animation: reveal-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 30%;
+    }
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    translate: 0 1.25rem;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+/* Enlaces profundos ---------------------------------------------------------- */
+.section:target,
+.session:target,
+.track:target {
+  background-color: rgba(103, 232, 249, 0.06);
+  box-shadow: inset 0 0 0 1px var(--cyan);
+}
+
+.session:target,
+.track:target {
+  border-radius: var(--radius);
+}
+
+/* Movimiento reducido -------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
