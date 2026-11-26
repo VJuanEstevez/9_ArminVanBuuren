@@ -26,7 +26,7 @@ export function initScrollTop() {
         window.requestAnimationFrame(updateVisibility);
       }
     },
-    { passive: true },
+    { passive: true }
   );
 
   button.addEventListener("click", () => {

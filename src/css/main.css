@@ -5,13 +5,13 @@
    base → utilidades → componentes → estados → responsive
    ========================================================================== */
 
-@import "./base.css";
-@import "./utilities.css";
-@import "./header.css";
-@import "./hero.css";
-@import "./layout.css";
-@import "./cards.css";
-@import "./embed.css";
-@import "./tracks.css";
-@import "./states.css";
-@import "./responsive.css";
+@import url("./base.css");
+@import url("./utilities.css");
+@import url("./header.css");
+@import url("./hero.css");
+@import url("./layout.css");
+@import url("./cards.css");
+@import url("./embed.css");
+@import url("./tracks.css");
+@import url("./states.css");
+@import url("./responsive.css");

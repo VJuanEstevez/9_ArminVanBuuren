@@ -12,15 +12,13 @@
   --violet: #8b5cf6;
   --magenta: #f472b6;
   --star: #ffcf7a;
-
   --line: rgba(255, 255, 255, 0.12);
   --line-strong: rgba(255, 255, 255, 0.24);
-
   --gradient-neon: linear-gradient(100deg, var(--cyan), var(--violet) 48%, var(--magenta));
 
   /* Tipografía */
-  --font-display: "Archivo Black", "Helvetica Neue", Arial, sans-serif;
-  --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-display: "Archivo Black", "Helvetica Neue", arial, sans-serif;
+  --font-serif: "Instrument Serif", georgia, "Times New Roman", serif;
   --font-body: "Space Grotesk", system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
 
@@ -29,7 +27,6 @@
   --gutter: clamp(1.25rem, 4vw, 4rem);
   --radius: 1.5rem;
   --shadow: 0 2rem 4rem -1.75rem rgba(0, 0, 0, 0.9);
-
   --hero-image: image-set(
     url("https://i.ytimg.com/vi/YtTls69zasM/mqdefault.jpg") 1x,
     url("https://i.ytimg.com/vi/YtTls69zasM/maxresdefault.jpg") 2x
@@ -46,7 +43,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5.5rem;
-  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {

@@ -88,7 +88,7 @@ function createThumbnail(videoId) {
         image.src = fallback;
       }
     },
-    { once: true },
+    { once: true }
   );
 
   image.addEventListener("error", () => {

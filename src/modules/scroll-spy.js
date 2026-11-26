@@ -50,7 +50,7 @@ export function initScrollSpy() {
         window.requestAnimationFrame(updateActiveSection);
       }
     },
-    { passive: true },
+    { passive: true }
   );
 
   window.addEventListener("resize", updateActiveSection);

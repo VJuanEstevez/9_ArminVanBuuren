@@ -51,7 +51,9 @@
   height: 100%;
   object-fit: cover;
   filter: saturate(1.05) brightness(0.82);
-  transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), filter 0.6s ease;
+  transition:
+    transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 0.6s ease;
 }
 
 .embed__image--missing {
@@ -78,8 +80,11 @@
   border-radius: 50%;
   box-shadow: 0 0.5rem 2rem rgba(5, 3, 15, 0.5);
   backdrop-filter: blur(0.6rem) saturate(150%);
-  -webkit-backdrop-filter: blur(0.6rem) saturate(150%);
-  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  backdrop-filter: blur(0.6rem) saturate(150%);
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
 
   svg {
     width: 1.35rem;
@@ -102,5 +107,5 @@
   border: 1px solid var(--line);
   border-radius: 0.3rem;
   backdrop-filter: blur(0.5rem);
-  -webkit-backdrop-filter: blur(0.5rem);
+  backdrop-filter: blur(0.5rem);
 }
